@@ -13,6 +13,9 @@
 #define IDB_BEZIER_TOOL 109
 #define IDB_BRUSH_TOOL    110
 
+#define HK_DRAW_ELLIPSE       111
+#define HK_RED_COLOR         112
+
 LPSTR szClassName = "Laboratory work #3";
 LRESULT CALLBACK WindowProcedure(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE hInst;
@@ -375,6 +378,9 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPar
                 (HMENU)IDB_BRUSH_TOOL,
                 hInst,
                 NULL);
+            //Register Keyboard Combinations
+            RegisterHotKey(hwnd, HK_DRAW_ELLIPSE, MOD_CONTROL, 0x45); //CTRL+E
+            RegisterHotKey(hwnd, HK_RED_COLOR, MOD_CONTROL, 0x52); // CTRL+R
 
             // Redirecting child messages to parent window
             GroupBoxProc = reinterpret_cast<WNDPROC>(GetWindowLongPtr(hwndSizeGroup, GWLP_WNDPROC));
@@ -630,7 +636,30 @@ LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPar
             }
 
             break;
+        case WM_HOTKEY:
+        {
+            switch(wParam)
+            {
+                case HK_DRAW_ELLIPSE:
 
+                    Button_SetCheck(hwndPencilTool, BST_UNCHECKED);
+                    Button_SetCheck(hwndLineTool, BST_UNCHECKED);
+                    Button_SetCheck(hwndBezierTool, BST_UNCHECKED);
+                    Button_SetCheck(hwndRectangleTool, BST_UNCHECKED);
+                    Button_SetCheck(hwndEraserTool, BST_UNCHECKED);
+                    Button_SetCheck(hwndEllipseTool, BST_CHECKED);
+                    break;
+
+                case HK_RED_COLOR:
+                    Button_SetCheck(hwndFillCheck, BST_CHECKED);
+                    fillColor = RGB(255,0,0);
+                    updateColorControls(hdc, fillColor, xFillPreview, yFillPreview);
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
         case WM_CLOSE:
             if(MessageBox(hwnd, "Do you really want to quit?", "Lab#3", MB_YESNO) == IDYES)
                 DestroyWindow(hwnd);
