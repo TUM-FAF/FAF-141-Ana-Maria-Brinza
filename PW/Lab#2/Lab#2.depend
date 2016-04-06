@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1458582114 source:d:\utm\anul 2\semestrul 2\pw\faf-141-ana-maria-brinza\lab#2\main.cpp
+	"resource.h"
+	<tchar.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<algorithm>
+
+1458580938 d:\utm\anul 2\semestrul 2\pw\faf-141-ana-maria-brinza\lab#2\resource.h
+
+1458581670 source:d:\utm\anul 2\semestrul 2\pw\faf-141-ana-maria-brinza\lab#2\resource.rc
+	"afxres.h"
+	"resource.h"
+

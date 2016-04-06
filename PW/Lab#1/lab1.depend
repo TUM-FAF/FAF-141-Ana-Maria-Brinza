@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1455755013 source:d:\00ana-maria\pw\lab#1\lab1\main.cpp
+	<tchar.h>
+	<windows.h>
+	<stdlib.h>
+
+1455741981 source:d:\00ana-maria\test.cpp
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+	<tchar.h>
+
+1455828624 source:d:\utm\anul 2\semestrul 2\pw\lab#1\lab1-2016-02-18\lab1\main.cpp
+	<tchar.h>
+	<windows.h>
+	<stdlib.h>
+
