@@ -24,3 +24,7 @@ Windows Timer. Animation.
     
   - for _Bonus Point Tasks_ :
     * For the task above, add balls with mouse.
+
+A screen how my application looks like:
+
+![alt tag](https://github.com/TUM-FAF/FAF-141-Ana-Maria-Brinza/blob/master/PW/Lab%234/both.png)
